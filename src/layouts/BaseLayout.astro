@@ -1,0 +1,92 @@
+---
+import { Font } from 'astro:assets';
+import { business } from '../data/business';
+import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  /** URL absolue d’une image pour Open Graph / Twitter (optionnel) */
+  image?: string;
+  /** ex. noindex pour les pages d’erreur */
+  robots?: string;
+}
+
+const { title, description, image, robots } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentPath = Astro.url.pathname;
+
+const ogLocale = 'fr_FR';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'ProfessionalService'],
+  name: business.brandName,
+  description:
+    'Psychologue psychothérapeute à Nancy. Consultations enfants, adolescents et adultes. Cabinet libéral.',
+  url: business.url,
+  telephone: business.phoneE164,
+  email: business.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: business.streetAddress,
+    addressLocality: business.addressLocality,
+    postalCode: business.postalCode,
+    addressCountry: business.addressCountry,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: business.geo.latitude,
+    longitude: business.geo.longitude,
+  },
+  areaServed: {
+    '@type': 'City',
+    name: business.addressLocality,
+  },
+  priceRange: '€',
+};
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
+    <link rel="canonical" href={canonicalURL} />
+
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:site_name" content={business.brandName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.href} />
+    {image && <meta property="og:image" content={image} />}
+
+    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={image} />}
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <Font cssVariable="--font-noto-serif" />
+    <Font cssVariable="--font-open-sans" />
+  </head>
+  <body class="Site">
+    <Header currentPath={currentPath} />
+
+    <div class="Site-content mx-auto w-full max-w-6xl px-2 max-lg:mt-1 lg:mt-0 lg:px-0">
+      <slot />
+    </div>
+
+    <Footer />
+  </body>
+</html>

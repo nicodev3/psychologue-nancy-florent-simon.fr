@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { business } from '../../data/business';
+
+const title = 'Florent Simon — Parcours et diplômes | Psychologue à Nancy';
+const description = `Diplômes (Université de Lorraine), expérience CMPP / AEMO / enseignement. Psychologue à Nancy — ${business.streetAddress}. ${business.phoneDisplay}.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="flex flex-wrap justify-between">
+    <main class="w-full">
+      <header class="text-center">
+        <h1 class="mb-10 text-base sm:text-lg md:text-3xl">Florent Simon, psychologue</h1>
+      </header>
+      <div class="px-2">
+        <div class="-mx-2 lg:flex">
+          <div class="lg:w-2/3 lg:px-2">
+            <div class="mb-4 rounded-lg border border-grey-darkest bg-white">
+              <h2 class="mb-0 rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-2xl">
+                Formation et diplômes
+              </h2>
+              <div class="mb-2 p-4 lg:mb-0 lg:p-12">
+                <ul>
+                  <li class="mb-4">Licence de Psychologie - Université de Lorraine</li>
+                  <li class="mb-4">Master de Psychologie Clinique - Université de Lorraine</li>
+                  <li>Doctorat de Psychologie Clinique - Université de Lorraine</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mb-4 rounded-lg border border-grey-darkest bg-white">
+              <h2 class="mb-0 rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-2xl">
+                Expérience professionnelle
+              </h2>
+              <div class="mb-2 p-4 lg:mb-0 lg:p-12">
+                <p class="mb-4">
+                  Florent SIMON occupe actuellement plusieurs fonctions qui rendent compte de sa spécialisation
+                  en psychologie de l’enfant et de l’adolescent :
+                </p>
+                <ul>
+                  <li class="mb-4">Psychologue clinicien en Centre-Médico-Psycho-Pédagogique (CMPP)</li>
+                  <li class="mb-4">
+                    Psychologue clinicien dans le champ de la Protection de l'Enfance (AEMO)
+                  </li>
+                  <li>
+                    Enseigement de la psychologie à l'Université auprès des étudiants de Licence et de Master
+                    (Université de Lorraine)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/3 lg:px-2">
+            <div class="mb-4 rounded-lg border border-grey-darkest bg-white">
+              <h2 class="mb-0 rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-2xl">
+                Règlementation
+              </h2>
+              <div class="mb-2 p-4 lg:mb-0 lg:p-12">
+                <h2 class="mb-4 text-lg">N° ADELI</h2>
+                <p class="mb-4">549310506</p>
+                <p class="mb-4">
+                  Le titre de psychologue est protégé et réglementé par l'Agence Régionale de Santé (ARS) à
+                  partir du numéro ADELI
+                </p>
+                <h2 class="mb-4 text-lg">N° SIRET</h2>
+                <p>844 745 646 00019</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</BaseLayout>

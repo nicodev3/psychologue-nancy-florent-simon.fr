@@ -1,0 +1,89 @@
+---
+import { business } from '../../data/business';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Psychologue pour adolescents à Nancy';
+const description = `Consultation psychologique pour adolescents à ${business.addressLocality} avec Florent Simon. Raisons de consulter et déroulement. ${business.phoneDisplay}.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="flex flex-wrap justify-between">
+    <main class="w-full">
+      <header class="text-center">
+        <h1 class="mb-10 text-base sm:text-lg md:text-3xl">Consultation psychologique adolescents</h1>
+      </header>
+      <div class="mb-4 rounded-lg border border-grey-darkest bg-white">
+        <h2 class="mb-0 rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-2xl">
+          Pourquoi consulter&nbsp;?
+        </h2>
+        <div class="mb-2 p-4 lg:mb-0 lg:p-12">
+          <p class="mb-4">
+            L'adolescence est généralement une période compliquée à vivre autant pour l'adolescent que pour
+            ses parents, car elle entraîne de nombreuses modifications au niveau physique et psychologique.
+          </p>
+          <p class="mb-4">
+            Elle constitue un temps particulier : c'est le passage progressif de l'enfance à la vie d'adulte.
+            C'est un bouleversement pour la personnalité de votre adolescent qui peut engendrer des conflits
+            ou des troubles particuliers.
+          </p>
+          <p class="mb-4">
+            Son mal être peut s'exprimer à partir de symptômes et de difficultés qui peuvent toucher de
+            nombreuses dimensions. Voici quelques exemples non exhaustifs :
+          </p>
+          <div class="flex flex-wrap lg:flex">
+            <ul class="w-full lg:w-2/3">
+              <li class="mb-4">
+                Il mange très peu et perd l’appétit ou à l’inverse, mange de manière importante et n’arrive
+                pas à se réfréner ;
+              </li>
+              <li class="mb-4">
+                Il ne parvient pas à dormir, a des insomnies ou au contraire, subit une fatigue intense et
+                semble dormir de manière excessive ;
+              </li>
+              <li class="mb-4">Il s’oppose régulièrement aux autres, déclenche fréquemment des conflits ;</li>
+              <li class="mb-4">
+                Il s’isole, est en difficulté pour entrer en contact avec les autres, se replie ;
+              </li>
+              <li class="mb-4">
+                Il perd confiance en lui, est en difficulté pour s’affirmer, se dévalorise fréquemment ;
+              </li>
+              <li class="mb-4">
+                Il ne parvient pas à investir le travail scolaire, a perdu sa motivation et commence à
+                décrocher des cours ;
+              </li>
+              <li class="mb-4">
+                Il consomme des substances (drogue, alcool) ou développe des conduites de dépendances
+                (jeux-vidéo, sexuelle, etc.) ;
+              </li>
+              <li>Il fugue, se scarifie, a des conduites délinquantes et/ou des conduites à risque.</li>
+            </ul>
+            <div class="flex w-full items-center justify-center lg:w-1/3">
+              <img src="/img/adoles10.png" alt="adolescent" width="200" height="200" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-4 rounded-lg border border-grey-darkest bg-white">
+        <h2 class="mb-0 rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-2xl">
+          Comment cela fonctionne ?
+        </h2>
+        <div class="custom-ados mb-2 p-4 lg:mb-0 lg:py-12">
+          <p class="mb-4">
+            Le premier entretien psychologique nécessite que l'adolescent soit reçu avec l'un des deux parents
+            ou les deux quand cela est possible. Cette première rencontre a pour but de faire connaissance
+            avec vous et avec votre adolescent. Il permet aussi à chacun d’expliquer sa demande et ses
+            attentes par rapport aux consultations psychologiques. Les modalités des séances (durée,
+            horaire) sont alors définies ensemble en fonction de votre demande et de vos possibilités.
+          </p>
+          <p class="mb-4">
+            Quand un suivi en psychothérapie est proposé et mis en place, l'adolescent est reçu seul en
+            séance. La psychothérapie implique alors de l’accompagner dans la verbalisation (la mise en mot)
+            de ses difficultés et de son mal être. Il s’agit ainsi de l’aider à mettre du sens sur ses
+            symptômes et à comprendre leur origine.
+          </p>
+          <p>La séance individuelle avec l'adolescent dure entre 45 minutes et 1 heure.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+</BaseLayout>

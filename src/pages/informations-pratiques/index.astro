@@ -1,0 +1,110 @@
+---
+import { business } from '../../data/business';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Informations pratiques — cabinet à Nancy';
+const description = `Honoraires, accès et carte : cabinet de Florent Simon, ${business.streetAddress}, ${business.postalCode} ${business.addressLocality}. RDV au ${business.phoneDisplay}.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="w-full">
+    <header class="text-center">
+      <h1 class="mb-10 text-base sm:text-lg md:text-3xl">Informations pratiques</h1>
+    </header>
+    <div class="px-2">
+      <div class="-mx-2 lg:flex">
+        <div class="lg:w-1/3 lg:px-2">
+          <div class="mb-4 rounded-lg border border-grey-darkest bg-white">
+            <h2 class="mb-0 rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-2xl">
+              Honoraires
+            </h2>
+            <div class="mb-2 p-4 lg:mb-0 lg:p-4">
+              <p class="my-4 text-center font-black">
+                <strong>Le tarif de la consultation est fixé à 55 euros</strong>
+              </p>
+              <h2 class="mb-4 text-center">Durée</h2>
+              <p class="mb-4">La consultation dure entre 45 et 60 minutes.</p>
+              <p class="mb-4">
+                La fréquence des séances sera déterminé avec vous, en fonction de la situation, de vos besoin
+                et de vos attentes.
+              </p>
+              <h2 class="mb-4 text-center">Règlement</h2>
+              <p class="mb-4 text-center">En espèces ou par chèque.</p>
+              <div class="mx-auto mb-6 flex w-1/3 justify-around">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="65" viewBox="0 0 100 63.6"
+                  ><path
+                    d="M0 63.6h100V0H0v63.6zm4.6-40.9c7.9 0 18.2-10.4 18.2-18.2h54.5c0 7.9 10.4 18.2 18.2 18.2v18.2c-7.9 0-18.2 10.4-18.2 18.2H22.8c0-7.9-10.4-18.2-18.2-18.2V22.7z"
+                  ></path><path
+                    d="M40.9 33.6h-2.1l-.7 3.3h3.1C43.9 48.1 54.4 50.5 61.3 47v-6.4c-3.7 4-12 3.7-13.5-3.6h9.6l.7-3.3H47.3V31h11.6l.7-3.3H47.9c1.5-6.9 9.6-7.2 12.5-4.3l1.2-5.9c-4.1-2.2-12.4-2-16.8 3-1.7 2-2.9 4.3-3.5 7.1h-2.5l-.6 3.2h2.7v2.8z"
+                  ></path></svg
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 98.6 92.9"
+                  ><path
+                    d="M96.5 78.2c1.1 0 2.1-1 2.1-2.1V34.4c0-1.1-1-2.1-2.1-2.1H61.4c-.8 0-1.5-.7-1.5-1.5V1.5c0-1.4-1.8-2.1-2.6-1C41 19 26 27.9 15.7 32.4c-.2.2.5.1-13.6.1-1.1 0-2.1 1-2.1 2.1v56.2c0 1.1 1 2.1 2.1 2.1h94.4c1.1 0 2.1-1 2.1-2.1s-1-2.1-2.1-2.1H14.4c-2 0-2-3.1 0-3.1h82.1c1.1 0 2.1-1 2.1-2.1s-1-2.1-2.1-2.1H14.4c-2 0-2-3.1 0-3.1h82.1v-.1zm-2.1-40v34.3c0 .8-.7 1.5-1.5 1.5-83.7-.3-80.1.6-80.1-.7 0-.3.1-.6.6-.7C42.6 63.5 60 44.1 60 39.3c0-.2-.4-2.6 1.5-2.6h31.4c.9 0 1.5.7 1.5 1.5z"
+                  ></path></svg
+                >
+              </div>
+              <h2 class="mb-4 text-center">Remboursement</h2>
+              <p class="mb-4">
+                Les consultations chez le psychologue ne sont pas remboursées par la Sécurité Sociale.
+                Néanmoins, de plus en plus de mutuelles prennent en charge tout ou une partie des
+                consultations (par exemple : Allianz, Axa, MGEN...). N'hésitez pas à vous renseigner auprès de
+                votre mutuelle.
+              </p>
+              <p>Dans ce cadre, une note d'honoraire pourra vous être délivrée à l'issue de chaque séance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/3 lg:px-2">
+          <div class="mb-4 rounded-lg border border-grey-darkest bg-white lg:mr-2">
+            <h2 class="mb-0 rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-2xl">Carte</h2>
+            <div class="mb-2 p-4 lg:mb-0 lg:p-4">
+              <iframe
+                title="Carte OpenStreetMap — cabinet"
+                width="100%"
+                height="350"
+                style="border: 1px solid black"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=6.164537281729282%2C48.68990290072631%2C6.175427050329746%2C48.699095107625986&layer=transportmap&marker=48.69449921396889%2C6.169982166029513"
+              ></iframe>
+              <br />
+              <small
+                ><a
+                  href="https://www.openstreetmap.org/?mlat=48.69450&mlon=6.16998#map=17/48.69450/6.16998&layers=T"
+                  target="_blank"
+                  rel="noopener noreferrer">Afficher une carte plus grande</a
+                ></small
+              >
+              <div class="text-center">
+                <h2 class="my-6">Ligne de bus</h2>
+                <p>Ligne 2 : arrêt Place Godefroy de Bouillon / arrêt Campus Lettres</p>
+                <p>Ligne 5 : arrêt Place Godefroy de Bouillon</p>
+                <h2 class="my-6">Adresse</h2>
+                <address class="not-italic">
+                  <p>2 rue de l'Oratoire, 54000 Nancy</p>
+                </address>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="h-full w-full rounded-lg border border-grey-darkest bg-white pb-6 text-center lg:w-1/3">
+          <h2 class="mb-6 bg-green p-6 text-lg font-black">Prendre RDV</h2>
+          <h3 class="mb-6 font-black">Par téléphone</h3>
+          <p class="mb-6">
+            <a href={`tel:${business.phoneE164}`} class="text-green-dark no-underline"
+              >{business.phoneDisplay}</a
+            >
+          </p>
+          <h3 class="mb-6 font-black">Par mail</h3>
+          <p class="mb-6">
+            <a
+              href="mailto:florentsimonpsychologue@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-green-dark no-underline">florentsimonpsychologue@gmail.com</a
+            >
+          </p>
+        </aside>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

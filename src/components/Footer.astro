@@ -1,0 +1,43 @@
+---
+import { business } from '../data/business';
+
+const year = new Date().getFullYear();
+const mapsHref =
+  'https://www.openstreetmap.org/?mlat=48.69450&mlon=6.16998#map=17/48.69450/6.16998&layers=T';
+---
+
+<footer class="text-center">
+  <div class="h-4 bg-yellow"></div>
+  <address class="mx-auto max-w-md not-italic pt-4">
+    <p class="mb-1 text-sm font-semibold">{business.legalName} — Psychologue à Nancy</p>
+    <p class="mb-1 text-sm">
+      <a
+        href={mapsHref}
+        class="footer-tap-target no-underline"
+        rel="noopener noreferrer"
+        target="_blank">
+        {business.streetAddress}, {business.postalCode} {business.addressLocality}
+      </a>
+    </p>
+    <p
+      class="mb-3 flex flex-col items-center gap-2 text-sm sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2 sm:gap-y-0">
+      <a href={`tel:${business.phoneE164}`} class="footer-tap-target no-underline">
+        {business.phoneDisplay}
+      </a>
+      <span class="hidden h-12 items-center sm:inline-flex" aria-hidden="true">·</span>
+      <a href={`mailto:${business.email}`} class="footer-tap-target no-underline">{business.email}</a>
+    </p>
+  </address>
+  <a href="/mentions-legales/" class="footer-tap-target no-underline">Mentions légales</a>
+  <div class="h-4 bg-green"></div>
+  <span class="text-sm p-1">Copyright © 2018–{year} - Florent SIMON - Tous droits réservés</span>
+  <div class="h-4 bg-yellow"></div>
+</footer>
+
+<p class="site-seo-credit mx-auto mt-2 mb-0 max-w-6xl px-2 text-center text-xs text-grey-darker">
+  <a
+    href="https://nicodev.fr/"
+    class="footer-tap-target text-grey-darker no-underline hover:text-grey-darkest"
+    target="_blank"
+    rel="noopener noreferrer">Création de sites internet pour psychologues</a>
+</p>

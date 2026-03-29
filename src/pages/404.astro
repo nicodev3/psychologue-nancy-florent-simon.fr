@@ -1,0 +1,17 @@
+---
+import { business } from '../data/business';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Page introuvable';
+const description = `Cette page n’existe pas. Retour à l’accueil : psychologue à Nancy, ${business.streetAddress}.`;
+---
+
+<BaseLayout title={title} description={description} robots="noindex, follow">
+  <article class="content text-center">
+    <main>
+      <h1>Rien par ici&nbsp;…</h1>
+      <h2 class="my-4" style="font-size: 120px; margin: 0;">💩</h2>
+      <h3><a href="/" class="underline">Retour à l’accueil</a></h3>
+    </main>
+  </article>
+</BaseLayout>
