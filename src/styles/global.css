@@ -71,10 +71,6 @@
 }
 
 @layer components {
-  .custom-menu-link.active {
-    background-color: #d7d19e;
-  }
-
   .Site {
     display: flex;
     min-height: 100vh;

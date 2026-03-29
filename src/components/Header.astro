@@ -18,9 +18,10 @@ const path = normalizePath(currentPath);
   <div class="home-top-color-bar mb-4 h-6 bg-yellow"></div>
   <div class="home-top-color-bar mb-4 h-6 bg-green"></div>
   <div class="home-top-color-bar h-6 bg-yellow"></div>
-  <nav
-    class="relative flex flex-wrap items-center justify-between px-12 py-0 max-lg:min-h-[4.5rem] max-lg:content-center lg:min-h-0 lg:content-normal lg:p-6"
-  >
+  <div class="mx-auto w-full max-w-6xl px-2 lg:px-0">
+    <nav
+      class="relative flex flex-wrap items-center justify-between py-0 max-lg:min-h-[4.5rem] max-lg:content-center lg:min-h-0 lg:content-normal lg:py-6"
+    >
     <div class="flex w-full items-center justify-between gap-3 lg:hidden">
       <a
         href="/"
@@ -67,11 +68,18 @@ const path = normalizePath(currentPath);
               return (
                 <li
                   class:list={[
-                    'custom-menu-link mt-4 block border-2 border-black bg-yellow p-2 text-black no-underline hover:bg-green lg:mt-0 lg:inline-block',
-                    { active: isActive },
+                    'custom-menu-link mt-4 block border-1 border-grey-darkest p-2 text-black lg:mt-0 lg:inline-block',
+                    isActive
+                      ? 'bg-green'
+                      : 'bg-yellow no-underline hover:bg-green',
                   ]}
                 >
-                  <a href={item.href} class="block no-underline">{item.name}</a>
+                  <a
+                    href={item.href}
+                    class="block no-underline text-inherit"
+                    aria-current={isActive ? 'page' : undefined}>
+                    {item.name}
+                  </a>
                 </li>
               );
             })
@@ -80,6 +88,7 @@ const path = normalizePath(currentPath);
       </div>
     </div>
   </nav>
+  </div>
 </header>
 
 <script is:inline>
