@@ -1,4 +1,5 @@
 ---
+import PrendreRdvPanel from '../../components/PrendreRdvPanel.astro';
 import { business } from '../../data/business';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
@@ -9,7 +10,7 @@ const description = `Honoraires, accès et carte : cabinet de Florent Simon, ${b
 <BaseLayout title={title} description={description}>
   <main class="w-full">
     <header class="text-center">
-      <h1 class="mb-10 text-base sm:text-lg md:text-3xl">Informations pratiques</h1>
+      <h1 class="site-page-h1 mb-10 text-base sm:text-lg md:text-3xl">Informations pratiques</h1>
     </header>
     <div class="px-2">
       <div class="-mx-2 lg:flex">
@@ -86,24 +87,9 @@ const description = `Honoraires, accès et carte : cabinet de Florent Simon, ${b
             </div>
           </div>
         </div>
-        <aside class="h-full w-full rounded-lg border border-grey-darkest bg-white pb-6 text-center lg:w-1/3">
-          <h2 class="mb-6 bg-green p-6 text-lg font-black">Prendre RDV</h2>
-          <h3 class="mb-6 font-black">Par téléphone</h3>
-          <p class="mb-6">
-            <a href={`tel:${business.phoneE164}`} class="text-green-dark no-underline"
-              >{business.phoneDisplay}</a
-            >
-          </p>
-          <h3 class="mb-6 font-black">Par mail</h3>
-          <p class="mb-6">
-            <a
-              href="mailto:florentsimonpsychologue@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-green-dark no-underline">florentsimonpsychologue@gmail.com</a
-            >
-          </p>
-        </aside>
+        <div id="contact" class="w-full scroll-mt-28 lg:w-1/3 lg:px-2">
+          <PrendreRdvPanel />
+        </div>
       </div>
     </div>
   </main>

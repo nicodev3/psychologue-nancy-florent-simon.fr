@@ -10,7 +10,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^6.1.1"
+    "astro": "^6.3.1"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.2",

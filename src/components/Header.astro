@@ -1,5 +1,5 @@
 ---
-import { mainNav } from '../data/nav';
+import { consultationsNavChildren, mainNav, navContactHref } from '../data/nav';
 
 interface Props {
   currentPath: string;
@@ -12,82 +12,183 @@ function normalizePath(path: string) {
 
 const { currentPath } = Astro.props;
 const path = normalizePath(currentPath);
+
+const consultationPaths = consultationsNavChildren.map((c) =>
+  normalizePath(new URL(c.href, Astro.site).pathname),
+);
+const isConsultationsBranchActive = consultationPaths.includes(path);
+
+function linkClasses(isActive: boolean) {
+  return [
+    'site-nav-link block border-2 border-grey-darkest px-3 py-3 text-center text-sm font-semibold no-underline transition-[color,background-color,box-shadow,transform] duration-150 ease-out sm:px-4 sm:text-base',
+    isActive
+      ? 'site-nav-link--active bg-green-darker text-white shadow-[inset_0_-4px_0_#f2d024] hover:bg-green-darkest hover:text-white hover:shadow-[inset_0_-4px_0_#ebdccc] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-dark focus-visible:ring-offset-2 active:scale-[0.99]'
+      : 'bg-yellow text-black hover:bg-green-lightest hover:text-green-darkest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-darker focus-visible:ring-offset-2 active:bg-green active:scale-[0.99]',
+  ];
+}
 ---
 
-<header>
-  <div class="home-top-color-bar mb-4 h-6 bg-yellow"></div>
-  <div class="home-top-color-bar mb-4 h-6 bg-green"></div>
-  <div class="home-top-color-bar h-6 bg-yellow"></div>
+<header class="site-header">
+  <div class="site-header-bands-wrap" aria-hidden="true">
+    <div class="site-header-bands-accent"></div>
+  </div>
   <div class="mx-auto w-full max-w-6xl px-2 lg:px-0">
     <nav
-      class="relative flex flex-wrap items-center justify-between py-0 max-lg:min-h-[4.5rem] max-lg:content-center lg:min-h-0 lg:content-normal lg:py-6"
+      class="site-header-nav relative flex flex-col gap-0 py-0 lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:py-6"
+      aria-label="Principal"
     >
-    <div class="flex w-full items-center justify-between gap-3 lg:hidden">
-      <a
-        href="/"
-        class="site-mobile-brand flex min-h-11 min-w-0 flex-1 items-center text-left text-base font-semibold leading-none text-black no-underline hover:text-grey-darkest"
+      <div
+        class="flex min-h-18 w-full items-center justify-between gap-3 lg:min-h-0 lg:w-auto lg:shrink-0 lg:justify-start"
       >
-        Florent Simon
-      </a>
-      <div class="js-nav-container flex shrink-0 items-center">
-        <button
-          type="button"
-          class="js-nav-trigger flex min-h-11 min-w-11 items-center justify-center rounded border-2 border-teal-light p-2.5 text-black hover:border-white hover:text-grey-darkest"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Ouvrir le menu"
+        <a
+          href="/"
+          class="site-wordmark group flex min-h-11 min-w-0 max-w-[calc(100%-3.5rem)] flex-1 items-center rounded-sm px-1 py-0.5 text-left text-sm leading-snug no-underline transition-colors [-webkit-tap-highlight-color:transparent] sm:text-base lg:max-w-md lg:flex-initial lg:text-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-darker focus-visible:ring-offset-2"
         >
-          <svg
-            class="nav-icon-burger h-8 w-8 shrink-0 fill-current"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            ><title>Menu</title><path
-              d="M3 5h18v2.5H3V5zm0 5.75h18v2.5H3v-2.5zm0 5.75h18V19H3v-2.5z"></path></svg
+          <span class="inline leading-snug">
+            <span class="site-wordmark-name site-mobile-brand font-semibold text-black group-hover:text-green-darkest"
+              >Florent Simon</span
+            ><span
+              class="site-wordmark-role font-normal text-grey-darker group-hover:text-grey-darkest"
+              > — Psychologue</span
+            >
+          </span>
+        </a>
+        <div class="js-nav-container flex shrink-0 items-center lg:hidden">
+          <button
+            type="button"
+            class="js-nav-trigger flex min-h-11 min-w-11 items-center justify-center rounded border-2 border-teal-light p-2.5 text-black transition-colors hover:border-green-darker hover:bg-green-lightest hover:text-green-darkest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-darker focus-visible:ring-offset-2"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Ouvrir le menu"
           >
-          <svg
-            class="nav-icon-close h-8 w-8 shrink-0 stroke-current"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            stroke-width="2.25"
-            stroke-linecap="round"
-            aria-hidden="true"
-            ><title>Fermer</title><path d="M6 6l12 12M18 6L6 18"></path></svg
+            <svg
+              class="nav-icon-burger h-8 w-8 shrink-0 fill-current"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              ><title>Menu</title><path
+                d="M3 5h18v2.5H3V5zm0 5.75h18v2.5H3v-2.5zm0 5.75h18V19H3v-2.5z"></path>
+            </svg>
+            <svg
+              class="nav-icon-close h-8 w-8 shrink-0 stroke-current"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke-width="2.25"
+              stroke-linecap="round"
+              aria-hidden="true"
+              ><title>Fermer</title><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          </button>
+        </div>
+      </div>
+      <div
+        id="site-nav"
+        class="js-nav w-full lg:relative lg:right-0 lg:top-0 lg:flex lg:w-auto lg:max-w-none lg:flex-1 lg:justify-end lg:self-center"
+      >
+        <div
+          class="site-nav-cluster flex w-full flex-col gap-3 lg:flex-row lg:flex-wrap lg:items-center lg:justify-end lg:gap-2"
+        >
+          <ul class="site-header-nav-list m-0 flex-1 list-none p-0 lg:flex lg:min-w-0 lg:flex-1 lg:flex-wrap lg:justify-end lg:gap-2">
+            {
+              mainNav.map((item) => {
+                if (item.type === 'link') {
+                  const itemPath = normalizePath(new URL(item.href, Astro.site).pathname);
+                  const isActive = path === itemPath;
+                  return (
+                    <li class="site-header-nav-item mt-3 block first:mt-0 lg:mt-0 lg:inline-block">
+                      <a
+                        href={item.href}
+                        class:list={linkClasses(isActive)}
+                        aria-current={isActive ? 'page' : undefined}
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  );
+                }
+                return (
+                  <li
+                    class:list={[
+                      'nav-dropdown js-nav-dropdown site-header-nav-item relative mt-3 block first:mt-0 lg:mt-0 lg:inline-block',
+                      isConsultationsBranchActive && 'nav-dropdown--has-active',
+                    ]}
+                  >
+                    <button
+                      type="button"
+                      class:list={[
+                        'js-consultations-trigger site-nav-link flex w-full items-center justify-center gap-1 border-2 border-grey-darkest px-3 py-3 text-center text-sm font-semibold transition-[color,background-color,box-shadow,transform] duration-150 ease-out sm:px-4 sm:text-base lg:inline-flex lg:w-auto lg:min-w-44',
+                        isConsultationsBranchActive
+                          ? 'site-nav-link--active bg-green-darker text-white shadow-[inset_0_-4px_0_#f2d024] hover:bg-green-darkest hover:text-white hover:shadow-[inset_0_-4px_0_#ebdccc] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-dark focus-visible:ring-offset-2 active:scale-[0.99]'
+                          : 'bg-yellow text-black hover:bg-green-lightest hover:text-green-darkest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-darker focus-visible:ring-offset-2 active:bg-green active:scale-[0.99]',
+                      ]}
+                      id={item.triggerId}
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-controls={item.menuId}
+                    >
+                      {item.name}
+                      <svg
+                        class="nav-dropdown-chevron h-4 w-4 shrink-0 opacity-80"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                    <ul
+                      id={item.menuId}
+                      class="nav-dropdown-panel js-consultations-panel m-0 mt-2 hidden list-none border-2 border-grey-darkest bg-white p-0 shadow-md lg:absolute lg:left-0 lg:top-full lg:z-70 lg:mt-1 lg:min-w-48 lg:rounded-sm lg:py-1"
+                      role="list"
+                    >
+                      {item.children.map((child) => {
+                        const childPath = normalizePath(new URL(child.href, Astro.site).pathname);
+                        const isChildActive = path === childPath;
+                        return (
+                          <li class="block border-t border-grey-light first:border-t-0 lg:border-t-0">
+                            <a
+                              href={child.href}
+                              class:list={[
+                                'site-nav-link site-nav-link--sub block px-4 py-3 text-left text-sm font-semibold no-underline transition-[color,background-color] duration-150 sm:text-base lg:py-2.5',
+                                isChildActive
+                                  ? 'site-nav-link--active bg-green-darker text-white hover:bg-green-darkest hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-yellow-dark'
+                                  : 'bg-grey-lightest text-black hover:bg-green-lightest hover:text-green-darkest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-green-darker',
+                              ]}
+                              aria-current={isChildActive ? 'page' : undefined}
+                            >
+                              {child.name}
+                            </a>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                );
+              })
+            }
+          </ul>
+          <a
+            href={navContactHref}
+            class="site-nav-contact-cta inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-lg border-2 border-green-darkest bg-green-darker px-4 py-3 text-center text-sm font-semibold text-white no-underline shadow-sm transition-[background-color,box-shadow,transform] duration-150 hover:bg-green-darkest hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-dark focus-visible:ring-offset-2 active:scale-[0.99] lg:ml-1 lg:w-auto lg:self-center lg:px-5 lg:py-2.5"
           >
-        </button>
+            <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+              />
+            </svg>
+            Contact
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="block w-full grow lg:flex lg:w-auto lg:items-center">
-      <div id="site-nav" class="js-nav w-full lg:relative lg:right-0 lg:top-0 lg:flex lg:grow lg:justify-end">
-        <ul>
-          {
-            mainNav.map((item) => {
-              const itemPath = normalizePath(new URL(item.href, Astro.site).pathname);
-              const isActive = path === itemPath;
-              return (
-                <li
-                  class:list={[
-                    'custom-menu-link mt-4 block border-1 border-grey-darkest p-2 text-black lg:mt-0 lg:inline-block',
-                    isActive
-                      ? 'bg-green'
-                      : 'bg-yellow no-underline hover:bg-green',
-                  ]}
-                >
-                  <a
-                    href={item.href}
-                    class="block no-underline text-inherit"
-                    aria-current={isActive ? 'page' : undefined}>
-                    {item.name}
-                  </a>
-                </li>
-              );
-            })
-          }
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
   </div>
 </header>
 
@@ -97,7 +198,7 @@ const path = normalizePath(currentPath);
     var n = document.querySelector('.js-nav');
     if (!t || !n) return;
 
-    function setOpen(isOpen) {
+    function setMobileNav(isOpen) {
       n.classList.toggle('active', isOpen);
       t.classList.toggle('active', isOpen);
       t.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
@@ -105,13 +206,60 @@ const path = normalizePath(currentPath);
     }
 
     t.addEventListener('click', function () {
-      setOpen(!n.classList.contains('active'));
+      setMobileNav(!n.classList.contains('active'));
     });
 
     n.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
-        setOpen(false);
+        setMobileNav(false);
       });
+    });
+
+    var dd = document.querySelector('.js-nav-dropdown');
+    var dbtn = document.querySelector('.js-consultations-trigger');
+    var dpanel = dbtn ? document.getElementById(dbtn.getAttribute('aria-controls')) : null;
+    if (!dd || !dbtn || !dpanel) return;
+
+    function isWide() {
+      return window.matchMedia('(min-width: 992px)').matches;
+    }
+
+    function setDropdown(open) {
+      dbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      dpanel.classList.toggle('hidden', !open);
+      dd.classList.toggle('is-open', open);
+    }
+
+    dbtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = dbtn.getAttribute('aria-expanded') === 'true';
+      setDropdown(!open);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!dd.contains(/** @type {Node} */ (e.target))) {
+        setDropdown(false);
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        setDropdown(false);
+        setMobileNav(false);
+      }
+    });
+
+    var leaveTimer;
+    dd.addEventListener('mouseenter', function () {
+      clearTimeout(leaveTimer);
+      if (isWide()) setDropdown(true);
+    });
+    dd.addEventListener('mouseleave', function () {
+      if (!isWide()) return;
+      clearTimeout(leaveTimer);
+      leaveTimer = setTimeout(function () {
+        if (!dd.matches(':focus-within')) setDropdown(false);
+      }, 140);
     });
   })();
 </script>

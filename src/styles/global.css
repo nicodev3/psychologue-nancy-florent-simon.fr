@@ -85,6 +85,37 @@
     font-family: var(--font-open-sans), system-ui, sans-serif;
   }
 
+  /* Titres de page : phrase normale, pas d’effet « titre » incohérent */
+  .site-page-h1 {
+    font-family: var(--font-open-sans), system-ui, sans-serif;
+    text-wrap: balance;
+  }
+
+  /* Accueil : nom + h1 + ligne de rôle en petites capitales */
+  .site-hero-name {
+    font-family: var(--font-open-sans), system-ui, sans-serif;
+    font-weight: 600;
+  }
+
+  .site-hero-h1 {
+    font-family: var(--font-open-sans), system-ui, sans-serif;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  .site-hero-subtitle {
+    font-family: var(--font-open-sans), system-ui, sans-serif;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    font-feature-settings: 'smcp' 1;
+  }
+
+  /* Blocs en vraies capitales : lisibilité */
+  .all-caps-tracked {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
   .js-nav-container {
     position: relative;
     z-index: 60;
@@ -145,17 +176,31 @@
     }
   }
 
-  .home-top-color-bar {
+  .site-header-bands-wrap {
     display: none;
   }
 
+  .site-header-bands-accent {
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      var(--color-yellow) 0%,
+      var(--color-yellow) 36%,
+      var(--color-green) 50%,
+      var(--color-yellow) 64%,
+      var(--color-yellow) 100%
+    );
+  }
+
   @media (min-width: 992px) {
-    .custom-home-main {
-      background: #fff url('/img/accuei22.png') no-repeat 0 0 / 180px;
+    .site-header-bands-wrap {
+      display: block;
+      margin-bottom: 0.75rem;
     }
 
-    .home-top-color-bar {
-      display: block;
+    .custom-home-main {
+      background: #fff url('/img/accuei22.png') no-repeat 0 0 / 180px;
     }
 
     .custom-enfants {
@@ -169,7 +214,9 @@
     }
 
     .js-nav {
-      display: block;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
       position: relative;
       left: auto;
       margin-left: 0;
@@ -187,5 +234,57 @@
       border: none;
       box-shadow: none;
     }
+  }
+
+  /* Panneau Prendre RDV : couleurs boutons préservées malgré a:visited global */
+  aside.rdv-panel .rdv-btn--filled,
+  aside.rdv-panel .rdv-btn--filled:visited {
+    color: var(--color-white);
+  }
+
+  aside.rdv-panel .rdv-btn--outline,
+  aside.rdv-panel .rdv-btn--outline:visited {
+    color: var(--color-green-darker);
+  }
+
+  aside.rdv-panel .rdv-btn--outline:visited:hover {
+    color: var(--color-green-darkest);
+  }
+
+  /* Header — wordmark et liens nav : couleurs malgré a:visited global */
+  .site-header .site-wordmark:visited {
+    color: inherit;
+  }
+
+  .site-header .site-wordmark:visited .site-wordmark-name {
+    color: var(--color-black);
+  }
+
+  .site-header .site-wordmark:visited .site-wordmark-role {
+    color: var(--color-grey-darker);
+  }
+
+  .site-header-nav a.site-nav-link:not(.site-nav-link--active):visited {
+    color: var(--color-black);
+  }
+
+  .site-header-nav a.site-nav-link--active:visited {
+    color: var(--color-white);
+  }
+
+  .site-header-nav a.site-nav-contact-cta:visited {
+    color: var(--color-white);
+  }
+
+  .site-header-nav a.site-nav-link--sub:not(.site-nav-link--active):visited {
+    color: var(--color-black);
+  }
+
+  .nav-dropdown-chevron {
+    transition: transform 0.15s ease;
+  }
+
+  .nav-dropdown.is-open .nav-dropdown-chevron {
+    transform: rotate(180deg);
   }
 }
