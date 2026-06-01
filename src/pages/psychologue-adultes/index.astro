@@ -1,4 +1,5 @@
 ---
+import PrendreRdvPanel from '../../components/PrendreRdvPanel.astro';
 import { business } from '../../data/business';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
@@ -7,78 +8,79 @@ const description = `Consultations psychologiques pour adultes avec Florent Simo
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="flex flex-wrap justify-between">
-    <main class="w-full">
-      <header class="text-center">
-        <h1 class="site-page-h1 mb-10 text-base sm:text-lg md:text-3xl">
-          Consultation psychologique pour les adultes
-        </h1>
-      </header>
-      <div class="mb-4 rounded-lg border border-grey-darkest bg-white">
-        <h2 class="mb-0 rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-2xl">
-          Pourquoi consulter&nbsp;?
-        </h2>
-        <div class="mb-2 p-4 lg:mb-0 lg:p-12">
-          <p class="mb-4">
+  <div class="inner-page">
+    <header class="inner-page-header">
+      <p class="inner-page-label">Consultations</p>
+      <h1 class="inner-page-h1">Consultation psychologique pour les adultes</h1>
+    </header>
+
+    <div class="inner-stack">
+      <div class="inner-card">
+        <h2 class="inner-card-title">Pourquoi consulter&nbsp;?</h2>
+        <div class="inner-card-body">
+          <p>
             Au cours de votre vie, vous avez rencontré des obstacles et traversé des événements douloureux.
-            Il arrive parfois que certains événements soient plus difficiles que d’autres à intégrer et que
-            vous vous sentiez dépassés. C’est dans ces moments que le soutien d’un professionnel peut être
+            Il arrive parfois que certains événements soient plus difficiles que d'autres à intégrer et que
+            vous vous sentiez dépassés. C'est dans ces moments que le soutien d'un professionnel peut être
             utile pour mettre du sens sur votre souffrance et votre mal être.
           </p>
-          <p class="mb-4">
+          <p>
             Les motifs de consultation peuvent être nombreux. Nous donnons ici quelques exemples à titre
             indicatif :
           </p>
-          <ul class="list-disc pl-5">
-            <li class="mb-4">
+          <ul class="inner-styled-list">
+            <li>
               Vous avez des difficultés au niveau relationnel avec votre famille, vos amis ou vos contacts
               professionnels ;
             </li>
-            <li class="mb-4">
+            <li>
               Vous avez vécu un événement traumatique comme une séparation, un deuil, un accident, une
               agression et vous ne parvenez pas à le dépasser ;
             </li>
-            <li class="mb-4">
+            <li>
               Vous avez des difficultés au niveau alimentaire (anorexie, boulimie, etc.) ou au niveau du
               sommeil (insomnies, hypersomnies, etc.) ;
             </li>
-            <li class="mb-4">
+            <li>
               Vous êtes excessivement timide, vous avez tendance à vous isoler et à vous replier ;
             </li>
-            <li class="mb-4">Vous avez des phobies ou faites des crises d’angoisse ;</li>
-            <li class="mb-4">
-              Vous avez le sentiment de somatiser, vous souffrez de psoriasis, d’eczéma ;
+            <li>Vous avez des phobies ou faites des crises d'angoisse ;</li>
+            <li>
+              Vous avez le sentiment de somatiser, vous souffrez de psoriasis, d'eczéma ;
             </li>
-            <li class="mb-4">
+            <li>
               Vous avez développé des conduites addictives (alcool, drogue, tabac, sexe, jeux…) ;
             </li>
-            <li class="mb-4">
-              Vous avez des difficultés à exercer votre rôle de parent, il est difficile pour vous d’asseoir
+            <li>
+              Vous avez des difficultés à exercer votre rôle de parent, il est difficile pour vous d'asseoir
               votre autorité, de trouver votre place de parent.
             </li>
           </ul>
         </div>
       </div>
-      <div class="mb-4 rounded-lg border border-grey-darkest bg-white">
-        <h2 class="mb-0 rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-2xl">
-          Comment cela fonctionne ?
-        </h2>
-        <div class="custom-ados mb-2 p-4 lg:mb-0 lg:py-12">
-          <p class="mb-4">
+
+      <div class="inner-card">
+        <h2 class="inner-card-title">Comment cela fonctionne ?</h2>
+        <div class="inner-card-body">
+          <p>
             Le premier entretien a pour fonction de vous rencontrer et de faire connaissance ensemble. Il
-            s’agit alors pour vous d’expliciter votre demande et les attentes que vous avez concernant les
+            s'agit alors pour vous d'expliciter votre demande et les attentes que vous avez concernant les
             consultations psychologiques. Les modalités des séances (durée, horaire) sont alors définies
             ensemble en fonction de votre demande et de vos possibilités.
           </p>
-          <p class="mb-4">
+          <p>
             La psychothérapie a pour but de vous permettre de prendre de la distance avec les évènements
             difficiles que vous traversez et de verbaliser les difficultés que vous rencontrez afin de mieux
-            pouvoir les affronter. Il s’agit de vous aider à mettre du sens sur vos symptômes et vos
+            pouvoir les affronter. Il s'agit de vous aider à mettre du sens sur vos symptômes et vos
             difficultés en trouvant leur origine.
           </p>
           <p>La séance individuelle avec l'adulte dure entre 45 minutes.</p>
         </div>
       </div>
-    </main>
+
+      <aside class="inner-rdv-aside" id="contact">
+        <PrendreRdvPanel />
+      </aside>
+    </div>
   </div>
 </BaseLayout>

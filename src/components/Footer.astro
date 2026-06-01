@@ -1,43 +1,69 @@
 ---
 import { business } from '../data/business';
+import { consultationsNavChildren } from '../data/nav';
 
 const year = new Date().getFullYear();
 const mapsHref =
   'https://www.openstreetmap.org/?mlat=48.69450&mlon=6.16998#map=17/48.69450/6.16998&layers=T';
+
+const footerNav = [
+  { name: 'Accueil', href: '/' },
+  ...consultationsNavChildren,
+  { name: 'Informations pratiques', href: '/informations-pratiques/' },
+  { name: 'Parcours professionnel', href: '/florent-simon-psychologue/' },
+] satisfies { name: string; href: string }[];
 ---
 
-<footer class="text-center">
-  <div class="h-4 bg-yellow"></div>
-  <address class="mx-auto max-w-md not-italic pt-4">
-    <p class="mb-1 text-sm font-semibold">{business.legalName} — Psychologue à Nancy</p>
-    <p class="mb-1 text-sm">
-      <a
-        href={mapsHref}
-        class="footer-tap-target no-underline"
-        rel="noopener noreferrer"
-        target="_blank">
-        {business.streetAddress}, {business.postalCode} {business.addressLocality}
-      </a>
-    </p>
-    <p
-      class="mb-3 flex flex-col items-center gap-2 text-sm sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-2 sm:gap-y-0">
-      <a href={`tel:${business.phoneE164}`} class="footer-tap-target no-underline">
-        {business.phoneDisplay}
-      </a>
-      <span class="hidden h-12 items-center sm:inline-flex" aria-hidden="true">·</span>
-      <a href={`mailto:${business.email}`} class="footer-tap-target no-underline">{business.email}</a>
-    </p>
-  </address>
-  <a href="/mentions-legales/" class="footer-tap-target underline">Mentions légales</a>
-  <div class="h-4 bg-green"></div>
-  <span class="text-sm p-1">Copyright © 2018–{year} — Florent Simon — Tous droits réservés</span>
-  <div class="h-4 bg-yellow"></div>
-</footer>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-brand">
+      <p class="site-footer-wordmark">Florent Simon</p>
+      <p class="site-footer-desc">
+        Psychologue clinicien à Nancy. J’accompagne enfants, adolescents et adultes dans un cadre
+        bienveillant et confidentiel, pour cheminer ensemble vers un mieux-être.
+      </p>
+    </div>
 
-<p class="site-seo-credit mx-auto my-2 mb-0 max-w-6xl p-2 text-center text-xs text-grey-darker">
-  <a
-    href="https://nicodev.fr/"
-    class="footer-tap-target text-grey-darker no-underline hover:text-grey-darkest"
-    target="_blank"
-    rel="noopener noreferrer">Création de sites internet pour psychologues</a>
-</p>
+    <div class="site-footer-cols">
+      <section class="site-footer-col" aria-label="Coordonnées du cabinet">
+        <p class="site-footer-col-title">Cabinet</p>
+        <address class="site-footer-address not-italic">
+          <a
+            href={mapsHref}
+            class="site-footer-link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {business.streetAddress}, {business.postalCode} {business.addressLocality}
+          </a>
+          <a href={`tel:${business.phoneE164}`} class="site-footer-link">{business.phoneDisplay}</a>
+          <a href={`mailto:${business.email}`} class="site-footer-link">{business.email}</a>
+        </address>
+      </section>
+
+      <nav class="site-footer-col" aria-label="Plan du site">
+        <p class="site-footer-col-title">Navigation</p>
+        {footerNav.map((item) => (
+          <a href={item.href} class="site-footer-link">{item.name}</a>
+        ))}
+      </nav>
+
+      <section class="site-footer-col" aria-label="Informations légales">
+        <p class="site-footer-col-title">Légal</p>
+        <a href="/mentions-legales/" class="site-footer-link">Mentions légales</a>
+      </section>
+    </div>
+  </div>
+
+  <div class="site-footer-bottom">
+    <p class="site-footer-copyright">
+      © 2018–{year} Florent Simon — Psychologue clinicien. Tous droits réservés.
+    </p>
+    <a
+      href="https://nicodev.fr/"
+      class="site-footer-credit"
+      target="_blank"
+      rel="noopener noreferrer">Création de sites internet pour psychologues</a
+    >
+  </div>
+</footer>

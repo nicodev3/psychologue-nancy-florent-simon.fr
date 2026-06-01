@@ -5,41 +5,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = 'Florent Simon, psychologue à Nancy';
 const description = `Florent Simon, psychologue psychothérapeute à Nancy — enfants, adolescents, adultes. Cabinet ${business.streetAddress}. ${business.phoneDisplay}.`;
+
+const consultations = [
+  {
+    name: 'Adultes',
+    href: '/psychologue-adultes/',
+    text: "Accompagnement thérapeutique pour traverser les périodes de crise, d'épuisement ou de questionnement existentiel.",
+  },
+  {
+    name: 'Adolescents',
+    href: '/psychologue-adolescents/',
+    text: "Un espace de parole sécurisé pour aborder les transformations physiques, émotionnelles et sociales de l'adolescence.",
+  },
+  {
+    name: 'Enfants',
+    href: '/psychologue-enfants/',
+    text: "Soutien psychologique par le jeu et le dessin pour aider l'enfant à exprimer ses émotions et surmonter ses difficultés.",
+  },
+] satisfies { name: string; href: string; text: string }[];
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="flex flex-wrap justify-between">
-    <main
-      class="custom-home-main mb-2 w-full rounded-lg border border-grey-darkest bg-white p-4 lg:mb-0 lg:w-3/5 lg:p-12"
-    >
-      <header class="text-center">
-        <div class="site-hero mb-10 text-base sm:text-lg md:text-xl">
-          <p class="site-hero-name mb-3 text-lg sm:text-xl md:text-2xl">Florent Simon</p>
-          <h1
-            class="site-hero-h1 site-page-h1 mx-auto max-w-xl text-base leading-snug sm:text-lg md:text-xl"
-          >
-            Psychologue et psychothérapeute à Nancy
-          </h1>
-          <p class="site-hero-subtitle mx-auto mt-4 max-w-xl text-sm text-grey-darker sm:text-base">
-            Enfants · adolescents · adultes
-          </p>
-        </div>
+  <div class="home-stitch-page">
+    <main class="home-stitch-main">
+      <header class="home-stitch-hero">
+        <p class="home-stitch-name">Florent Simon</p>
+        <h1 class="home-stitch-title">Psychologue et psychothérapeute à Nancy</h1>
+        <p class="home-stitch-subtitle">Enfants · adolescents · adultes</p>
       </header>
-      <div class="text-center">
-        <p class="mb-6">
+
+      <div class="home-stitch-body">
+        <p>
           Je reçois les enfants, les adolescents et les adultes en consultations psychologiques à mon
           cabinet libéral.
         </p>
-        <p class="mb-6">
+        <p>
           Il se situe{' '}
           <a
             href="https://www.openstreetmap.org/?mlat=48.69450&mlon=6.16998#map=17/48.69450/6.16998&layers=T"
-            class="text-green-dark no-underline"
+            class="home-stitch-link"
             rel="noopener noreferrer"
             target="_blank">2 rue de l'oratoire, à Nancy</a
           >.
         </p>
-        <p class="mb-6">
+        <p>
           Ce site a pour fonction de répondre aux principales questions que vous vous posez sur les
           motifs qui peuvent amener à consulter un psychologue ainsi que sur la manière dont se déroulent
           les consultations.
@@ -47,8 +56,45 @@ const description = `Florent Simon, psychologue psychothérapeute à Nancy — e
         <p>Si vous avez des questions, n’hésitez pas à me contacter directement.</p>
       </div>
     </main>
-    <div class="w-full lg:w-1/3">
+
+    <section class="home-services" aria-labelledby="home-services-title">
+      <div class="home-services-head">
+        <h2 id="home-services-title" class="home-services-title">Une approche adaptée à chacun</h2>
+        <p class="home-services-lead">
+          Chaque étape de la vie comporte ses propres défis. Je propose des consultations ciblées
+          pour répondre aux besoins spécifiques de chaque âge.
+        </p>
+      </div>
+
+      <ul class="home-services-grid">
+        {
+          consultations.map((item) => (
+            <li class="home-service-card group">
+              <span class="home-service-rule" aria-hidden="true" />
+              <h3 class="home-service-name">{item.name}</h3>
+              <p class="home-service-text">{item.text}</p>
+              <a class="home-service-link" href={item.href}>
+                En savoir plus
+                <svg
+                  class="home-service-arrow"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  aria-hidden="true"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 12h16m0 0-6-6m6 6-6 6" />
+                </svg>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <aside class="home-stitch-aside" id="contact">
       <PrendreRdvPanel />
-    </div>
+    </aside>
   </div>
 </BaseLayout>

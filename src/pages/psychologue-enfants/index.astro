@@ -1,4 +1,5 @@
 ---
+import PrendreRdvPanel from '../../components/PrendreRdvPanel.astro';
 import { business } from '../../data/business';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
@@ -7,60 +8,58 @@ const description = `Consultations psychologiques pour enfants à ${business.add
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="flex flex-wrap justify-between">
-    <main class="w-full">
-      <header class="text-center">
-        <h1 class="site-page-h1 mb-10 text-base sm:text-lg md:text-3xl">
-          Consultation psychologique pour les enfants
-        </h1>
-      </header>
-      <div class="mb-4 rounded-lg border border-grey-darkest bg-white">
-        <h2 class="mb-0 rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-2xl">
-          Pourquoi consulter pour son enfant&nbsp;?
-        </h2>
-        <div class="mb-2 p-4 lg:mb-0 lg:p-12">
-          <p class="mb-4">
+  <div class="inner-page">
+    <header class="inner-page-header">
+      <p class="inner-page-label">Consultations</p>
+      <h1 class="inner-page-h1">Consultation psychologique pour les enfants</h1>
+    </header>
+
+    <div class="inner-stack">
+      <div class="inner-card">
+        <h2 class="inner-card-title">Pourquoi consulter pour son enfant&nbsp;?</h2>
+        <div class="inner-card-body">
+          <p>
             Votre enfant peut traverser de nombreuses difficultés au cours de sa vie et de son développement.
-            Il peut être difficile pour lui d’exprimer de manière directe son mal être et sa souffrance.
+            Il peut être difficile pour lui d'exprimer de manière directe son mal être et sa souffrance.
           </p>
-          <p class="mb-4">
+          <p>
             C'est à travers des troubles et des symptômes que votre enfant va alors pouvoir manifester ses
             difficultés. Ses symptômes ont donc toujours un sens et une signification mais il peut être
-            difficile pour vous d’en comprendre l’origine et la cause. C’est alors que le recours à un
+            difficile pour vous d'en comprendre l'origine et la cause. C'est alors que le recours à un
             psychologue peut être envisagé afin de mieux comprendre ce qui est difficile pour votre enfant et
             de pouvoir lui venir en aide.
           </p>
-          <p class="mb-4">
+          <p>
             Chez le bébé et l'enfant, les troubles peuvent s'exprimer de nombreuses manières différentes.
             Voici quelques exemples non exhaustifs :
           </p>
-          <ul class="list-disc list-inside pl-4">
-            <li class="mb-4">
+          <ul class="inner-styled-list">
+            <li>
               Il refuse de manger, trie excessivement la nourriture ou semble au contraire ne jamais
-              s’arrêter de manger ;
+              s'arrêter de manger ;
             </li>
-            <li class="mb-4">
-              Il a des difficultés pour s’endormir, fait fréquemment des cauchemars ou a des terreurs
+            <li>
+              Il a des difficultés pour s'endormir, fait fréquemment des cauchemars ou a des terreurs
               nocturnes ;
             </li>
-            <li class="mb-4">Il fait pipi au lit, souffre de constipation ;</li>
-            <li class="mb-4">Il souffre de psoriasis ou d’eczéma ;</li>
-            <li class="mb-4">
-              Il connait des difficultés au niveau des apprentissages, peine à se concentrer à l’école, il
+            <li>Il fait pipi au lit, souffre de constipation ;</li>
+            <li>Il souffre de psoriasis ou d'eczéma ;</li>
+            <li>
+              Il connait des difficultés au niveau des apprentissages, peine à se concentrer à l'école, il
               y a une chute des résultats scolaire ;
             </li>
-            <li class="mb-4">
-              Il est replié sur lui-même, fait preuve d’une timidité excessive, est en difficulté pour entrer
-              en contact avec les autres ou au contraire, peut être agressif et s’opposer fréquemment aux
-              autres et/ou à l’adulte ;
+            <li>
+              Il est replié sur lui-même, fait preuve d'une timidité excessive, est en difficulté pour entrer
+              en contact avec les autres ou au contraire, peut être agressif et s'opposer fréquemment aux
+              autres et/ou à l'adulte ;
             </li>
-            <li class="mb-4">Il a des phobies ou des peurs intenses ;</li>
-            <li class="mb-4">
-              Il régresse et ne parvient plus à effectuer seul des comportements qu’il parvenait à faire
+            <li>Il a des phobies ou des peurs intenses ;</li>
+            <li>
+              Il régresse et ne parvient plus à effectuer seul des comportements qu'il parvenait à faire
               auparavant ;
             </li>
           </ul>
-          <p class="mb-4">
+          <p>
             Ces différents troubles peuvent apparaître à la suite de changements importants (naissance,
             séparation, déménagement, changement de classe, décès…) en lien avec des angoisses ou des
             blocages dans le développement de votre enfant.
@@ -68,34 +67,33 @@ const description = `Consultations psychologiques pour enfants à ${business.add
           <p>Les consultations chez un psychologue peuvent concerner votre enfant dès ses premiers mois de vie.</p>
         </div>
       </div>
-      <div class="mb-4 rounded-lg border border-grey-darkest bg-white">
-        <h2 class="mb-0 rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-2xl">
-          Comment cela fonctionne&nbsp;?
-        </h2>
-        <div class="custom-enfants mb-2 p-4 lg:mb-0 lg:py-12">
-          <p class="mb-4">
-            Le premier entretien psychologique nécessite la présence de l’enfant et de l'un des deux parents
+
+      <div class="inner-card">
+        <h2 class="inner-card-title">Comment cela fonctionne&nbsp;?</h2>
+        <div class="inner-card-body">
+          <p>
+            Le premier entretien psychologique nécessite la présence de l'enfant et de l'un des deux parents
             ou des deux quand cela est possible. Il permet de vous rencontrer, de faire connaissance avec
             vous et votre enfant et de mettre en avant la demande de chacun concernant la consultation
             psychologique.
           </p>
-          <p class="mb-4">
+          <p>
             Ce premier entretien permet aussi de convenir ensemble, en fonction de votre demande et de vos
             possibilités, des modalités des séances (durée, horaire).
           </p>
-          <p class="mb-4">
-            Quand un suivi en psychothérapie est mis en place pour l’enfant, celui-ci prend appui sur les
-            différentes modalités de communication qu’il en mesure d’utiliser en fonction de son âge. Il
-            s'agit évidemment tout d’abord du langage mais aussi du jeu, du dessin, du modelage, de la
+          <p>
+            Quand un suivi en psychothérapie est mis en place pour l'enfant, celui-ci prend appui sur les
+            différentes modalités de communication qu'il en mesure d'utiliser en fonction de son âge. Il
+            s'agit évidemment tout d'abord du langage mais aussi du jeu, du dessin, du modelage, de la
             peinture etc... Toutes ces activités sont équivalentes à la parole et permettront à votre enfant
-            d’exprimer ses difficultés et sa souffrance d’une autre manière.
+            d'exprimer ses difficultés et sa souffrance d'une autre manière.
           </p>
-          <p class="mb-4">
+          <p>
             La psychothérapie a pour fonction de faire émerger les difficultés de votre enfant à partir de ses
-            différentes modalités de communication. L’objectif est ainsi de favoriser la résolution des
+            différentes modalités de communication. L'objectif est ainsi de favoriser la résolution des
             difficultés par leur expression.
           </p>
-          <p class="mb-4">
+          <p>
             Au cours de la psychothérapie, des échanges réguliers vous sont proposés afin de faire le point
             ensemble. Vous faites ainsi partie intégrante du travail thérapeutique mené auprès de votre
             enfant.
@@ -103,6 +101,10 @@ const description = `Consultations psychologiques pour enfants à ${business.add
           <p>La séance individuelle avec l'enfant dure entre 45 minutes et 1 heure</p>
         </div>
       </div>
-    </main>
+
+      <aside class="inner-rdv-aside" id="contact">
+        <PrendreRdvPanel />
+      </aside>
+    </div>
   </div>
 </BaseLayout>

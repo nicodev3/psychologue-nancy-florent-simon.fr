@@ -7,27 +7,26 @@ const description =
 ---
 
 <BaseLayout title={title} description={description}>
-  <main class="w-full pb-10">
-    <header class="mb-8 text-center">
-      <h1 class="site-page-h1 text-base sm:text-lg md:text-3xl">Mentions légales</h1>
-      <p class="mt-4 text-sm text-grey-darker">
-        Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l’économie
+  <div class="inner-page" style="max-width: 900px;">
+    <header class="inner-page-header">
+      <p class="inner-page-label">Informations légales</p>
+      <h1 class="inner-page-h1">Mentions légales</h1>
+      <p class="inner-page-desc">
+        Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie
         numérique, du Règlement (UE) 2016/679 du 27 avril 2016 (RGPD) et du Code de la consommation.
       </p>
     </header>
 
-    <div class="space-y-6">
-      <section class="rounded-lg border border-grey-darkest bg-white">
-        <h2 class="rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-xl">
-          1. Éditeur du site
-        </h2>
-        <div class="p-4 lg:p-8">
-          <p class="mb-4">Le présent site est édité par :</p>
-          <ul class="mb-4 list-inside list-disc space-y-1">
+    <div class="inner-stack">
+      <div class="inner-card">
+        <h2 class="inner-card-title">1. Éditeur du site</h2>
+        <div class="inner-card-body">
+          <p>Le présent site est édité par :</p>
+          <ul class="mb-4 list-inside list-disc space-y-1 pl-2 mt-3">
             <li><strong>Florent SIMON</strong></li>
             <li>Psychologue (titre professionnel protégé)</li>
             <li>Exerçant en profession libérale</li>
-            <li>Cabinet : <strong>2 rue de l’Oratoire, 54000 Nancy</strong></li>
+            <li>Cabinet : <strong>2 rue de l'Oratoire, 54000 Nancy</strong></li>
             <li>Téléphone : <a href="tel:+33689583585">06 89 58 35 85</a></li>
             <li>
               Courriel :
@@ -37,119 +36,109 @@ const description =
               Numéro SIRET : <strong>844 745 646 00019</strong>
             </li>
             <li>
-              Numéro ADELI : <strong>54 93 10 506</strong> (inscription au répertoire de l’ARS Grand Est)
+              Numéro ADELI : <strong>54 93 10 506</strong> (inscription au répertoire de l'ARS Grand Est)
             </li>
           </ul>
-          <p class="text-sm text-grey-darker">
-            La réglementation applicable aux psychologues (titre d’usage, inscription ADELI, déontologie) est
+          <p class="text-sm" style="color: #5f675f;">
+            La réglementation applicable aux psychologues (titre d'usage, inscription ADELI, déontologie) est
             notamment fixée par le Code de la santé publique et les textes pris pour son application.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section class="rounded-lg border border-grey-darkest bg-white">
-        <h2 class="rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-xl">
-          2. LCEN — informations précontractuelles
-        </h2>
-        <div class="space-y-4 p-4 lg:p-8">
+      <div class="inner-card">
+        <h2 class="inner-card-title">2. LCEN — informations précontractuelles</h2>
+        <div class="inner-card-body space-y-4">
           <p>
-            <strong>LCEN</strong> — Loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie
+            <strong>LCEN</strong> — Loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie
             numérique.
           </p>
           <p>
-            Sans préjudice des autres obligations d’information prévues par les textes législatifs et
+            Sans préjudice des autres obligations d'information prévues par les textes législatifs et
             réglementaires en vigueur, toute personne qui assure la fourniture de biens ou de services au moyen
-            d’un site internet doit permettre un accès facile, direct et permanent aux informations suivantes
+            d'un site internet doit permettre un accès facile, direct et permanent aux informations suivantes
             (notamment articles 6-III et suivants de la LCEN, dans la rédaction en vigueur) :
           </p>
-          <ol class="list-inside list-decimal space-y-3 pl-1">
+          <ol class="list-inside list-decimal space-y-3 pl-1 mt-3">
             <li>
               <strong>Personne physique :</strong> nom <strong>SIMON</strong>, prénom <strong>Florent</strong>.
             </li>
             <li>
-              <strong>Adresse, courriel et téléphone</strong> permettant d’entrer effectivement en contact :
-              voir la section « Éditeur du site » <strong>(cabinet au 2 rue de l’Oratoire, 54000 Nancy)</strong>,
+              <strong>Adresse, courriel et téléphone</strong> permettant d'entrer effectivement en contact :
+              voir la section « Éditeur du site » <strong>(cabinet au 2 rue de l'Oratoire, 54000 Nancy)</strong>,
               téléphone <a href="tel:+33689583585">06 89 58 35 85</a> et courriel
               <a href="mailto:florentsimonpsychologue@gmail.com">florentsimonpsychologue@gmail.com</a>.
             </li>
             <li>
               <strong>Immatriculation :</strong> le professionnel exerce en <strong>profession libérale en
               personne physique</strong> ; numéro <strong>SIRET 844 745 646 00019</strong> ; numéro
-              <strong>ADELI 54 93 10 506</strong> (inscription au répertoire de l’ARS Grand Est). Il n’y a pas
-              de capital social distinct ni de siège social autre que l’adresse professionnelle indiquée
+              <strong>ADELI 54 93 10 506</strong> (inscription au répertoire de l'ARS Grand Est). Il n'y a pas
+              de capital social distinct ni de siège social autre que l'adresse professionnelle indiquée
               ci-dessus.
             </li>
             <li>
-              <strong>Taxe sur la valeur ajoutée :</strong> lorsqu’il est assujetti et identifié par un
-              numéro individuel au sens de l’article 286 <em>ter</em> du code général des impôts, ce numéro est
+              <strong>Taxe sur la valeur ajoutée :</strong> lorsqu'il est assujetti et identifié par un
+              numéro individuel au sens de l'article 286 <em>ter</em> du code général des impôts, ce numéro est
               porté sur les <strong>factures et documents comptables</strong> émis dans le cadre des
-              prestations. Le présent site est avant tout un site d’information ; pour toute précision
+              prestations. Le présent site est avant tout un site d'information ; pour toute précision
               relative à la TVA applicable, le cabinet peut être sollicité aux coordonnées de la section
               « Éditeur du site ».
             </li>
           </ol>
-          <p class="text-sm text-grey-darker">
-            Les obligations résultant du Code de la consommation à l’égard des consommateurs (information
+          <p class="text-sm" style="color: #5f675f;">
+            Les obligations résultant du Code de la consommation à l'égard des consommateurs (information
             précontractuelle, médiation, etc.) complètent, le cas échéant, les mentions ci-dessus — voir les
             sections dédiées sur cette page.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section class="rounded-lg border border-grey-darkest bg-white">
-        <h2 class="rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-xl">
-          3. Directeur de la publication
-        </h2>
-        <div class="p-4 lg:p-8">
+      <div class="inner-card">
+        <h2 class="inner-card-title">3. Directeur de la publication</h2>
+        <div class="inner-card-body">
           <p>
-            Le directeur de la publication est <strong>M. Florent SIMON</strong>, en sa qualité d’éditeur du
+            Le directeur de la publication est <strong>M. Florent SIMON</strong>, en sa qualité d'éditeur du
             site.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section class="rounded-lg border border-grey-darkest bg-white">
-        <h2 class="rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-xl">
-          4. Hébergeur du site
-        </h2>
-        <div class="p-4 lg:p-8">
-          <p class="mb-4">Le site est hébergé par :</p>
-          <ul class="list-inside list-disc space-y-1">
+      <div class="inner-card">
+        <h2 class="inner-card-title">4. Hébergeur du site</h2>
+        <div class="inner-card-body">
+          <p>Le site est hébergé par :</p>
+          <ul class="list-inside list-disc space-y-1 pl-2 mt-3">
             <li><strong>Netlify, Inc.</strong></li>
             <li>512 2nd Street, 2nd Floor, San Francisco, CA 94107, États-Unis</li>
             <li>Site web : <a href="https://www.netlify.com" rel="noopener noreferrer">www.netlify.com</a></li>
-            <li>Contact (support) : disponible depuis la page « Contact » du site de l’hébergeur.</li>
+            <li>Contact (support) : disponible depuis la page « Contact » du site de l'hébergeur.</li>
           </ul>
         </div>
-      </section>
+      </div>
 
-      <section class="rounded-lg border border-grey-darkest bg-white">
-        <h2 class="rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-xl">
-          5. Propriété intellectuelle
-        </h2>
-        <div class="p-4 lg:p-8">
-          <p class="mb-4">
-            L’ensemble du site (structure, textes, images, logos, éléments graphiques, bases de données le
+      <div class="inner-card">
+        <h2 class="inner-card-title">5. Propriété intellectuelle</h2>
+        <div class="inner-card-body">
+          <p>
+            L'ensemble du site (structure, textes, images, logos, éléments graphiques, bases de données le
             cas échéant, etc.) est protégé par le droit de la propriété intellectuelle. Sauf autorisation
-            écrite préalable de l’éditeur, toute reproduction, représentation, adaptation ou diffusion, même
+            écrite préalable de l'éditeur, toute reproduction, représentation, adaptation ou diffusion, même
             partielle, sur quelque support que ce soit, est interdite et est susceptible de constituer une
             contrefaçon au sens des articles L. 335-2 et suivants du Code de la propriété intellectuelle.
           </p>
-          <p class="mb-4">
+          <p>
             Les marques et logos éventuellement mentionnés appartiennent à leurs titulaires respectifs.
           </p>
-          <p class="text-sm text-grey-darker">
+          <p class="text-sm" style="color: #5f675f;">
             Les photographies ou illustrations du cabinet utilisées sur le site le sont dans le respect des
             droits attachés à ces contenus.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section class="rounded-lg border border-grey-darkest bg-white">
-        <h2 class="rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-xl">
-          6. Données personnelles (RGPD)
-        </h2>
-        <div class="space-y-4 p-4 lg:p-8">
+      <div class="inner-card">
+        <h2 class="inner-card-title">6. Données personnelles (RGPD)</h2>
+        <div class="inner-card-body space-y-4">
           <p>
             <strong>Responsable du traitement :</strong> M. Florent SIMON, aux coordonnées indiquées à la
             section « Éditeur du site ».
@@ -157,14 +146,14 @@ const description =
           <p>
             <strong>Secret professionnel :</strong> le psychologue est tenu au secret professionnel (notamment
             articles 226-13 et suivants du Code pénal et Code de déontologie des psychologues). Les
-            informations transmises dans le cadre d’une relation de soin ou de consultation sont traitées sous
-            cette réserve et ne sont communiquées à des tiers qu’exceptionnellement, dans les cas prévus par
+            informations transmises dans le cadre d'une relation de soin ou de consultation sont traitées sous
+            cette réserve et ne sont communiquées à des tiers qu'exceptionnellement, dans les cas prévus par
             la loi.
           </p>
           <p>
             <strong>Finalités du traitement :</strong> répondre aux demandes de contact ou de rendez-vous
             effectuées volontairement par les personnes concernées (téléphone, courriel), assurer la
-            prospection informationnelle relative à l’activité du cabinet via le site, et respecter les
+            prospection informationnelle relative à l'activité du cabinet via le site, et respecter les
             obligations légales et réglementaires applicables.
           </p>
           <p>
@@ -173,37 +162,37 @@ const description =
             prévues par le RGPD.
           </p>
           <p>
-            <strong>Catégories de données :</strong> données d’identification et de contact communiquées par
+            <strong>Catégories de données :</strong> données d'identification et de contact communiquées par
             les personnes concernées (nom, prénom, coordonnées, contenu du message), données techniques de
-            connexion pouvant être conservées par l’hébergeur conformément à sa politique et à la loi. Les
+            connexion pouvant être conservées par l'hébergeur conformément à sa politique et à la loi. Les
             messages peuvent, le cas échéant, contenir des <strong>données relatives à la santé</strong> ; dans
-            cette hypothèse, elles sont traitées conformément à l’article 9 du RGPD, aux dispositions du Code
+            cette hypothèse, elles sont traitées conformément à l'article 9 du RGPD, aux dispositions du Code
             de la santé publique relatives au dossier patient et au secret, et pour les seules finalités
             professionnelles légitimes.
           </p>
           <p>
             <strong>Durées de conservation :</strong> les messages et échanges sont conservés pendant la
             durée nécessaire à leur traitement et au suivi de la relation professionnelle, ou conformément
-            aux obligations légales de conservation s’agissant de dossiers professionnels ; au-delà, les
+            aux obligations légales de conservation s'agissant de dossiers professionnels ; au-delà, les
             données sont archivées, anonymisées ou supprimées selon les règles applicables.
           </p>
           <p>
-            <strong>Destinataires :</strong> l’éditeur, ses sous-traitants techniques strictement nécessaires
-            (notamment l’hébergeur), et le cas échéant les autorités habilitées par la loi.
+            <strong>Destinataires :</strong> l'éditeur, ses sous-traitants techniques strictement nécessaires
+            (notamment l'hébergeur), et le cas échéant les autorités habilitées par la loi.
           </p>
           <p>
-            <strong>Transfert hors Union européenne :</strong> l’hébergement peut impliquer un transfert de
+            <strong>Transfert hors Union européenne :</strong> l'hébergement peut impliquer un transfert de
             données vers les États-Unis dans le cadre du contrat conclu avec Netlify ; ce transfert est
             encadré par les clauses contractuelles types de la Commission européenne ou tout autre mécanisme
             reconnu par la réglementation applicable.
           </p>
           <p>
-            <strong>Vos droits :</strong> vous disposez d’un droit d’accès, de rectification, d’effacement,
-            de limitation du traitement, d’opposition (dans les conditions prévues par le RGPD), ainsi que
-            d’un droit à la portabilité lorsque applicable. Vous pouvez également définir des directives
+            <strong>Vos droits :</strong> vous disposez d'un droit d'accès, de rectification, d'effacement,
+            de limitation du traitement, d'opposition (dans les conditions prévues par le RGPD), ainsi que
+            d'un droit à la portabilité lorsque applicable. Vous pouvez également définir des directives
             relatives au sort de vos données après votre décès (conditions prévues par la loi n° 78-17 du 6
             janvier 1978 modifiée). Pour exercer vos droits, adressez une demande par courriel ou courrier
-            postal accompagnée d’une preuve d’identité aux coordonnées du responsable du traitement.
+            postal accompagnée d'une preuve d'identité aux coordonnées du responsable du traitement.
           </p>
           <p>
             <strong>Réclamation :</strong> vous pouvez introduire une réclamation auprès de la CNIL (<a
@@ -212,50 +201,46 @@ const description =
             >).
           </p>
         </div>
-      </section>
+      </div>
 
-      <section class="rounded-lg border border-grey-darkest bg-white">
-        <h2 class="rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-xl">
-          7. Cookies et traceurs
-        </h2>
-        <div class="p-4 lg:p-8">
-          <p class="mb-4">
-            Le site a vocation à être un site d’information. Les seuls cookies ou traceurs susceptibles
-            d’être déposés sont ceux strictement nécessaires au fonctionnement technique du site ou à la
-            sécurité (par l’hébergeur ou des outils de protection contre les abus), ou ceux dont le
-            dépôt résulte d’un choix exprès de l’utilisateur après information préalable.
+      <div class="inner-card">
+        <h2 class="inner-card-title">7. Cookies et traceurs</h2>
+        <div class="inner-card-body">
+          <p>
+            Le site a vocation à être un site d'information. Les seuls cookies ou traceurs susceptibles
+            d'être déposés sont ceux strictement nécessaires au fonctionnement technique du site ou à la
+            sécurité (par l'hébergeur ou des outils de protection contre les abus), ou ceux dont le
+            dépôt résulte d'un choix exprès de l'utilisateur après information préalable.
           </p>
-          <p class="mb-4">
-            Tout recours à des cookies ou traceurs non strictement nécessaires à la fourniture d’un service
-            expressément demandé (mesure d’audience, publicité, réseaux sociaux, etc.) ne serait mis en
-            œuvre qu’avec votre consentement préalable, via un dispositif conforme aux recommandations de la
+          <p>
+            Tout recours à des cookies ou traceurs non strictement nécessaires à la fourniture d'un service
+            expressément demandé (mesure d'audience, publicité, réseaux sociaux, etc.) ne serait mis en
+            œuvre qu'avec votre consentement préalable, via un dispositif conforme aux recommandations de la
             CNIL.
           </p>
-          <p class="text-sm text-grey-darker">
+          <p class="text-sm" style="color: #5f675f;">
             Pour en savoir plus : <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs" rel="noopener noreferrer"
             >CNIL — cookies et traceurs</a
             >.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section class="rounded-lg border border-grey-darkest bg-white">
-        <h2 class="rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-xl">
-          8. Médiation de la consommation
-        </h2>
-        <div class="p-4 lg:p-8">
-          <p class="mb-4">
+      <div class="inner-card">
+        <h2 class="inner-card-title">8. Médiation de la consommation</h2>
+        <div class="inner-card-body">
+          <p>
             Conformément aux articles <strong>L. 611-1</strong> et suivants et <strong
               >R. 612-1</strong
             > et suivants du Code de la consommation, en cas de litige concernant une prestation conclue avec un
             consommateur, vous disposez, après une démarche préalable écrite auprès du cabinet demeurée infructueuse,
-            du droit de saisir gratuitement un médiateur de la consommation en vue d’une résolution amiable.
+            du droit de saisir gratuitement un médiateur de la consommation en vue d'une résolution amiable.
           </p>
-          <p class="mb-4">
+          <p>
             Les coordonnées du médiateur de la consommation auquel le professionnel adhère sont les suivantes
             :
           </p>
-          <ul class="mb-4 list-inside list-disc space-y-2">
+          <ul class="list-inside list-disc space-y-2 pl-2 mt-3">
             <li>
               <strong>Association CM2C — Centre de médiation de la consommation de conciliateurs de justice</strong>
             </li>
@@ -265,31 +250,29 @@ const description =
               saisine disponible sur le site du médiateur.
             </li>
           </ul>
-          <p class="text-sm text-grey-darker">
-            L’adhésion effective à ce dispositif de médiation incombe au professionnel ; en cas de changement
+          <p class="text-sm mt-4" style="color: #5f675f;">
+            L'adhésion effective à ce dispositif de médiation incombe au professionnel ; en cas de changement
             de médiateur, la présente mention sera mise à jour dans les meilleurs délais.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section class="rounded-lg border border-grey-darkest bg-white">
-        <h2 class="rounded-t-lg bg-green py-4 text-center text-base sm:text-lg md:text-xl">
-          9. Règlement en ligne des litiges (plateforme ODR)
-        </h2>
-        <div class="p-4 lg:p-8">
-          <p class="mb-4">
+      <div class="inner-card">
+        <h2 class="inner-card-title">9. Règlement en ligne des litiges (plateforme ODR)</h2>
+        <div class="inner-card-body">
+          <p>
             Conformément au règlement (UE) n° 524/2013, la Commission européenne met à disposition une
-            plateforme de règlement en ligne des litiges, accessible à l’adresse suivante :
+            plateforme de règlement en ligne des litiges, accessible à l'adresse suivante :
             <a href="https://ec.europa.eu/consumers/odr/" rel="noopener noreferrer"
               >https://ec.europa.eu/consumers/odr/</a
             >.
           </p>
-          <p class="text-sm text-grey-darker">
+          <p class="text-sm mt-3" style="color: #5f675f;">
             Cette plateforme ne préjuge pas des modalités de traitement du litige par le médiateur compétent
             désigné ci-dessus ni des voies de recours judiciaires.
           </p>
         </div>
-      </section>
+      </div>
     </div>
-  </main>
+  </div>
 </BaseLayout>

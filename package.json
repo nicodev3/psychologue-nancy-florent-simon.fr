@@ -10,10 +10,13 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^6.3.1"
+    "astro": "^6.4.2"
+  },
+  "overrides": {
+    "vite": "^7"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.2.2",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3"

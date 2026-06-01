@@ -6,13 +6,13 @@ const mailHref = `mailto:${business.email}`;
 ---
 
 <aside
-  class="rdv-panel h-full w-full rounded-lg border border-grey-darkest bg-white pb-6 text-center"
+  class="rdv-panel h-full w-full rounded-2xl border border-grey-darkest bg-white pb-7 text-center"
 >
-  <h2 class="mb-6 bg-green p-6 text-lg font-black">Prendre RDV</h2>
+  <h2 class="rdv-panel-title mb-6 p-6 text-xl">Prendre rendez-vous</h2>
   <div class="flex flex-col items-stretch gap-4 px-4 sm:px-6">
     <a
       href={telHref}
-      class="rdv-btn rdv-btn--filled group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg border-2 border-green-darker bg-green-darker px-4 py-3 text-center text-sm font-semibold text-white no-underline shadow-sm transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-out hover:border-green-darkest hover:bg-green-darkest hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-darker focus-visible:ring-offset-2 active:scale-[0.98] active:brightness-95 sm:text-base"
+      class="rdv-btn rdv-btn--filled group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border-2 border-green-darker bg-green-darker px-5 py-3 text-center text-sm font-semibold text-white no-underline shadow-sm transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-out hover:border-green-darkest hover:bg-green-darkest hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-darker focus-visible:ring-offset-2 active:scale-[0.98] active:brightness-95 sm:text-base"
     >
       <svg
         class="h-5 w-5 shrink-0 text-white"
@@ -32,7 +32,7 @@ const mailHref = `mailto:${business.email}`;
     </a>
     <a
       href={mailHref}
-      class="rdv-btn rdv-btn--outline group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg border-2 border-green-darker bg-white px-4 py-3 text-center text-sm font-semibold text-green-darker no-underline shadow-sm transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-out hover:border-green-darkest hover:bg-green-lightest hover:text-green-darkest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-darker focus-visible:ring-offset-2 active:scale-[0.98] active:bg-green sm:text-base"
+      class="rdv-btn rdv-btn--outline group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border-2 border-green-darker bg-white px-5 py-3 text-center text-sm font-semibold text-green-darker no-underline shadow-sm transition-[color,background-color,border-color,box-shadow,transform] duration-150 ease-out hover:border-green-darkest hover:bg-green-lightest hover:text-green-darkest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-darker focus-visible:ring-offset-2 active:scale-[0.98] active:bg-green sm:text-base"
     >
       <svg
         class="h-5 w-5 shrink-0 text-green-darker transition-colors group-hover:text-green-darkest"
